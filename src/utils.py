@@ -20,6 +20,7 @@ def save_simple_metric_report(train_score: float, test_score: float, validation_
         report_file.write(f"### Test score: {test_score}"+"\n")
         report_file.write(f"### Validation score: {validation_score}"+"\n")
 
+
 def get_model_performance_test_set(y_real: pd.Series, y_pred: pd.Series) -> None:
     fig, ax = plt.subplots()
     fig.set_figheight(8)
