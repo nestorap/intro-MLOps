@@ -9,7 +9,7 @@ on:
     inputs:
       reason:
         description: why to run this
-        required: flase
+        required: false
         default: running CT
 jobs:
   continuous-training:
