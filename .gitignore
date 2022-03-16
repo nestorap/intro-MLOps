@@ -5,3 +5,4 @@
 report.txt
 *.png
 __pycache__/
+model/model.pkl
