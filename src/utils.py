@@ -11,10 +11,10 @@ def update_model(model: Pipeline) -> None:
 # Con esta función creamos un txt con las métricas de train, test y validacion que nos dice si el modelo mejor o empeora y se es necesario su reentrenamiento
 def save_simple_metric_report(train_score: float, test_score: float, validation_score: float, model: Pipeline) -> None:
     with open('report.txt', "w") as report_file:
-        report_file.write("# Model Pipeline")
+        report_file.write("# Model Pipeline"+"\n")
 
         for key, value in model.named_steps.items():
-            report_file.write(f"### {key}:{value.__repr__}"+"\n")
+            report_file.write(f"### {key}:{value.__repr__()}"+"\n")
 
         report_file.write(f"### Train score: {train_score}"+"\n")
         report_file.write(f"### Test score: {test_score}"+"\n")
