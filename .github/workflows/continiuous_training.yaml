@@ -27,10 +27,10 @@ jobs:
           pip install -r src/requirements.txt
           export GOOGLE_APPLICATION_CREDENTIALS=$(python utilities/setter.py)
           dvc pull model/model.pkl.dvc -r model-track
-          dvc unprotect model.pkl
+          dvc unprotect model/model.pkl
           dvc repro -f
           echo "Training completed"
-          dvc add model.pkl -r model-track --to-remote
+          dvc add model/model.pkl -r model-track --to-remote
           dvc push model/model.pkl.dvc -r model-track
       - name: commit .dvc file changes
         run: |
