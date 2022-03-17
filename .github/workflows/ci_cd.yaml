@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2 # Esta es una acción predefinida por github. Chequea el report
       - name: Set enviorement and bring the model # Aquí traeremos la versión más reciente del modelo
-        runs: |
+        run: |
           pip3 install virtualenv
           virtualenv venv
           source venv/bin/activate
