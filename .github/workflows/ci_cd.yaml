@@ -29,7 +29,7 @@ jobs:
         run: |
           docker build . -t $REGISTRY_NAME:$GITHUB_SHA
           gcloud auth configure-docker -q
-          sudo -u $USER docker push $REGISTRY_NAME:SGITHUB_SHA
+          sudo -u $USER docker push $REGISTRY_NAME:$GITHUB_SHA
       - name: Deployment to cloud run
         run: |
           gcloud run services update $SERVICE_NAME --region=$REGION --image=$REGISTRY_NAME:$GITHUB_SHA
