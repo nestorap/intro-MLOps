@@ -1,5 +1,19 @@
 name: Continuous integration/Continuous deployment
-on: [push] # como se va a ctivar
+on:
+  push:
+    branches: # Aqui elegimos la rama que queremos que haga el despliegue continuo
+      - main
+  workflow_run:
+    workflows: ["Continuous training"]
+    branches: [main]
+    types:
+      - completed
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: why to run this
+        required: false
+        default: running CI/CD
 jobs:
   ci_cd:
     runs-on: ubuntu-latest
