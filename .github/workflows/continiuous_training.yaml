@@ -1,8 +1,11 @@
 name: Continuous training
 on:
+<<<<<<< HEAD
   push:
     branches:
       - workflow_continuous_training
+=======
+>>>>>>> 611a87355c17c46dbd443d4d7d694493f1d2be54
   schedule:
     - cron: '0 */6 * * *'
   workflow_dispatch:

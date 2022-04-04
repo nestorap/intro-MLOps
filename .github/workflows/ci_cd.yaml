@@ -35,7 +35,11 @@ jobs:
           export GOOGLE_APPLICATION_CREDENTIALS=$(python utilities/setter.py)
           dvc pull model/model.pkl.dvc -r model-track
       - name: Set up GCLOUD SDK
+<<<<<<< HEAD
         uses: google-github-actions/setup-gcloud@v0 #esta accion la proporciona github. Podemos mirar mas
+=======
+        uses: google-github-actions/setup-gcloud@master #esta accion la proporciona github. Podemos mirar mas
+>>>>>>> 611a87355c17c46dbd443d4d7d694493f1d2be54
         with:
           service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
           project_id: ${{ secrets.PROJECT_ID }}
